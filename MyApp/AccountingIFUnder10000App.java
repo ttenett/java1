@@ -1,5 +1,5 @@
-// 자바를 이용해 간단한 재무재표 만들기
-public class AccountingApp {
+// 파일을 나누어 배당금 1만원 미만인 사람들에 해당하는 코드를 따로 저장할 수 있음.
+public class AccountingIFUnder10000App {
 
 	public static void main(String[] args) {
 		
@@ -13,9 +13,11 @@ public class AccountingApp {
 		double total = valueOfSupply + vat;
 		double expense = valueOfSupply*expenseRate;
 		double income = valueOfSupply - expense;
-		double dividend1 = income * 0.5;
-		double devidend2 = income * 0.3;
-		double dividend3 = income * 0.2;
+		
+		// 1만원 미만일때는 1번이 다 가져가고, 1만원이상 일때 배분하려면?
+		double dividend1 = income * 1;
+		double devidend2 = income * 0;
+		double dividend3 = income * 0;
 		
 		System.out.println("Value of supply :"+valueOfSupply); // 공급가
 		System.out.println("VAT : "+ vat ); // 부가세

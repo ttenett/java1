@@ -1,10 +1,9 @@
-// 자바를 이용해 간단한 재무재표 만들기
-public class AccountingApp {
+// 동업자-배당금 3명이 아니라 수천 수만명이라면?
+public class AccountingArrayLoopApp {
 
 	public static void main(String[] args) {
 		
-//		double valueOfSupply = 12345.0 아래 값들을 변수로 변경
-		
+//		double valueOfSupply = 12345.0 아래 값들을 변수로 변경		
 //		double valueOfSupply = args[0]; // 문자열을 더블에 넣으니 에러남
 		double valueOfSupply = Double.parseDouble(args[0]);
 		double vatRate = 0.1;
@@ -13,15 +12,23 @@ public class AccountingApp {
 		double total = valueOfSupply + vat;
 		double expense = valueOfSupply*expenseRate;
 		double income = valueOfSupply - expense;
-		double dividend1 = income * 0.5;
-		double devidend2 = income * 0.3;
-		double dividend3 = income * 0.2;
+		
+		// 배열을 만듦으로써 각각의 값들이 서로 연관된 값들이라는 것을 분명하게 할 수있다. 하나의 변수가 오염될 가능성이 줄어듬.
+		double[] dividendRates = new double[3]; // double 배열 3개들어가는 생성자
+		dividendRates[0] = 0.5;
+		dividendRates[1] = 0.3;
+		dividendRates[2] = 0.2;		
+		
+		double dividend1 = income * dividendRates[0];
+		double devidend2 = income * dividendRates[1];
+		double dividend3 = income * dividendRates[2];
 		
 		System.out.println("Value of supply :"+valueOfSupply); // 공급가
 		System.out.println("VAT : "+ vat ); // 부가세
 		System.out.println("Total : "+ total ); // 총 지출금액
 		System.out.println("Expense : "+ expense ); // 비용
 		System.out.println("Income : "+ income ); // 순 이익
+		// 사실 아래의 3줄은 똑같은 일을 반복중. 데이터가 다를 뿐.
 		System.out.println("Dividend : "+ dividend1 ); // 배당금 첫번째 투자자
 		System.out.println("Dividend : "+ devidend2 ); // 두번째 투자자
 		System.out.println("Dividend : "+ dividend3 ); // 세번째 투자자
