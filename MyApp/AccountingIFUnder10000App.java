@@ -24,9 +24,9 @@ public class AccountingIFUnder10000App {
 		System.out.println("Total : "+ total ); // 총 지출금액
 		System.out.println("Expense : "+ expense ); // 비용
 		System.out.println("Income : "+ income ); // 순 이익
-		System.out.println("Dividend : "+ dividend1 ); // 배당금 첫번째 투자자
-		System.out.println("Dividend : "+ devidend2 ); // 두번째 투자자
-		System.out.println("Dividend : "+ dividend3 ); // 세번째 투자자
+		System.out.println("Dividend1 : "+ dividend1 ); // 배당금 첫번째 투자자
+		System.out.println("Dividend2 : "+ devidend2 ); // 두번째 투자자
+		System.out.println("Dividend3 : "+ dividend3 ); // 세번째 투자자
 
 	}
 
