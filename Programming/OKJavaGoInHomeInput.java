@@ -10,8 +10,11 @@ public class OKJavaGoInHomeInput {
 	// parameter, 매개변수
 	public static void main(String[] args) {
 		
-		String id = JOptionPane.showInputDialog("Enter a ID");
-		String bright = JOptionPane.showInputDialog("Enter a Bright level"); // 무드램프 입력값
+//		String id = JOptionPane.showInputDialog("Enter a ID");
+//		String bright = JOptionPane.showInputDialog("Enter a Bright level"); // 무드램프 입력값
+		
+		String id = args[0];
+		String bright = args[1];
 		
 		// Elevator call
 		Elevator myElevator = new Elevator(id); // 자바 아파트의 엘리베이터 호출
